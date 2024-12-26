@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "786017fd-2221-4722-91c6-fc596f8e2c85",
+		"name": "widatech Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4975546"
+	},
+	"item": [
+		{
+			"name": "insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"date\": \"2024-12-27\",\n  \"customer_name\": \"John Doe\",\n  \"salesperson_name\": \"Jane Smith\",\n  \"payment_type\": \"CASH\",\n  \"notes\": \"First purchase with discount\",\n  \"products\": [\n    {\n      \"item_name\": \"Product A\",\n      \"quantity\": 2,\n      \"total_cost\": 50.00,\n      \"total_price\": 75.00\n    },\n    {\n      \"item_name\": \"Product B\",\n      \"quantity\": 1,\n      \"total_cost\": 30.00,\n      \"total_price\": 45.00\n    }\n  ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/invoices",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"invoices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"customer_name\": \"Updated Customer Name\",\n  \"salesperson_name\": \"Updated Salesperson Name\",\n  \"payment_type\": \"CREDIT\",\n  \"notes\": \"Updated invoice notes\",\n  \"products\": [\n    {\n      \"item_name\": \"Updated Product c\",\n      \"quantity\": 15,\n      \"total_cost\": 120.00,\n      \"total_price\": 180.00\n    },\n    {\n      \"item_name\": \"Updated Product B\",\n      \"quantity\": 10,\n      \"total_cost\": 70.00,\n      \"total_price\": 100.00\n    }\n  ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/invoices/inv-2712247072",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"invoices",
+						"inv-2712247072"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/invoices",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"invoices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/invoices/inv-2712247072",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"invoices",
+						"inv-2712247072"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/mf/Downloads/InvoiceImport-2 (1).xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/invoices/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"invoices",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
